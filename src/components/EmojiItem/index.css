@@ -1,0 +1,47 @@
+.emoji-button {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  background: transparent;
+  border: 0;
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+}
+.emoji-name {
+  margin: 0;
+  white-space: nowrap;
+}
+.emoji-image-box {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.emoji-image {
+  width: 30px;
+  height: 30px;
+  transition: all 0.15s ease;
+}
+.emoji-button.active .emoji-image {
+  width: 56px;
+  height: 56px;
+  filter: drop-shadow(0 0 10px rgba(255, 190, 56, 0.7));
+}
+@media (max-width: 768px) {
+  .emoji-button {
+    font-size: 12px;
+    gap: 10px;
+  }
+  .emoji-image {
+    width: 24px;
+    height: 24px;
+  }
+  .emoji-button.active .emoji-image {
+    width: 40px;
+    height: 40px;
+  }
+}

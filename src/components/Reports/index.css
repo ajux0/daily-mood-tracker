@@ -1,0 +1,55 @@
+.reports-content {
+  padding: 32px 62px 64px;
+}
+.reports-heading {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 32px;
+}
+.reports-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 48px;
+}
+.monthly-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.monthly-heading {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+.month-select {
+  background-color: #ffffff;
+  color: #4e5d72;
+  border: 0;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.chart-container {
+  width: 100%;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .reports-content {
+    padding: 24px 16px 40px;
+  }
+  .reports-heading,
+  .monthly-heading {
+    font-size: 18px;
+  }
+  .reports-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
