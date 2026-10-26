@@ -22,10 +22,12 @@
   display: flex;
   flex-direction: column;
 }
-.login-logo {
-  width: 100%;
-  height: auto;
-  margin-bottom: 40px;
+.login-heading {
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 56px;
 }
 .login-label {
   color: #ffffff;
@@ -79,7 +81,8 @@
     border-radius: 32px;
     padding: 40px 16px;
   }
-  .login-logo {
-    margin-bottom: 32px;
+  .login-heading {
+    font-size: 28px;
+    margin-bottom: 40px;
   }
 }

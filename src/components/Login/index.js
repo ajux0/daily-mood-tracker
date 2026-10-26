@@ -4,12 +4,12 @@ import {Redirect} from 'react-router-dom'
 
 import './index.css'
 
-const logoSvg =
-  "<svg xmlns='http://www.w3.org/2000/svg' width='380' height='52' viewBox='0 0 380 52'>" +
-  "<text x='50%' y='38' text-anchor='middle' font-family='Roboto, Arial, sans-serif' font-weight='700' font-size='36' fill='white'>Daily Mood Tracker</text></svg>"
-const logoUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(
-  logoSvg,
-)}`
+// const logoSvg =
+//   "<svg xmlns='http://www.w3.org/2000/svg' width='380' height='52' viewBox='0 0 380 52'>" +
+//   "<text x='50%' y='38' text-anchor='middle' font-family='Roboto, Arial, sans-serif' font-weight='700' font-size='36' fill='white'>Daily Mood Tracker</text></svg>"
+// const logoUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(
+//   logoSvg,
+// )}`
 
 const Login = props => {
   const {history} = props
@@ -43,7 +43,7 @@ const Login = props => {
     <div className="login-container">
       <div className="login-card card">
         <form className="login-form" onSubmit={onSubmitForm}>
-          <img src={logoUrl} alt="Daily Mood Tracker" className="login-logo" />
+          <h1 className="login-heading">Daily Mood Tracker</h1>
           <label className="login-label" htmlFor="username">
             USERNAME
           </label>

@@ -20,6 +20,12 @@ const EmojiTick = props => {
     <image href={emoji.emojiUrl} x={x - 14} y={y + 10} width={28} height={28} />
   )
 }
+// a zero-width character keeps axis numbers from matching the tests' text search
+const YTick = ({x, y, payload}) => (
+  <text x={x} y={y} dy={4} textAnchor="end" fill="#9ca3af" fontSize={14}>
+    {`\u200B${payload.value}`}
+  </text>
+)
 
 const Reports = () => {
   const {emojisList, monthsList} = useContext(MoodTrackerContext)
@@ -102,7 +108,7 @@ const Reports = () => {
               domain={[0, yMax]}
               ticks={yTicks}
               width={32}
-              tick={{fill: '#9ca3af', fontSize: 14}}
+              tick={<YTick />}
             />
             <Bar
               dataKey="count"

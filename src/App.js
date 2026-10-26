@@ -1,13 +1,14 @@
 import './App.css'
 import {useState} from 'react'
 import {Route, Switch, Redirect} from 'react-router-dom'
+import Cookies from 'js-cookie'
 
 import MoodTrackerContext from './context/MoodTrackerContext'
 import Login from './components/Login'
 import Home from './components/Home'
 import Reports from './components/Reports'
 import NotFound from './components/NotFound'
-import ProtectedRoute from './components/ProtectedRoute'
+// import ProtectedRoute from './components/ProtectedRoute'
 
 // #region - Use these lists in your code.
 
@@ -2398,9 +2399,42 @@ const App = () => {
       }}
     >
       <Switch>
-        <Route exact path="/login" component={Login} />
-        <ProtectedRoute exact path="/" component={Home} />
-        <ProtectedRoute exact path="/reports" component={Reports} />
+        <Route
+          exact
+          path="/login"
+          render={props =>
+            Cookies.get('jwt_token') !== undefined ? (
+              <Redirect to="/" />
+            ) : (
+              <Login {...props} />
+            )
+          }
+        />
+
+        <Route
+          exact
+          path="/"
+          render={props =>
+            Cookies.get('jwt_token') !== undefined ? (
+              <Home {...props} />
+            ) : (
+              <Redirect to="/login" />
+            )
+          }
+        />
+
+        <Route
+          exact
+          path="/reports"
+          render={props =>
+            Cookies.get('jwt_token') !== undefined ? (
+              <Reports {...props} />
+            ) : (
+              <Redirect to="/login" />
+            )
+          }
+        />
+
         <Route path="/not-found" component={NotFound} />
         <Redirect to="/not-found" />
       </Switch>

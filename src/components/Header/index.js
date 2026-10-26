@@ -42,27 +42,17 @@ const Header = props => {
           <line x1="4" y1="17" x2="20" y2="17" />
         </svg>
       </button>
-      <ul className={isOpen ? 'header-links open' : 'header-links'}>
-        <li>
-          <Link to="/" className={homeClass}>
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link to="/reports" className={reportsClass}>
-            Reports
-          </Link>
-        </li>
-        <li>
-          <button
-            type="button"
-            className="logout-button"
-            onClick={onClickLogout}
-          >
-            Logout
-          </button>
-        </li>
-      </ul>
+      <div className={isOpen ? 'header-links open' : 'header-links'}>
+        <Link to="/" className={homeClass}>
+          Home
+        </Link>
+        <Link to="/reports" className={reportsClass}>
+          Reports
+        </Link>
+        <button type="button" className="logout-button" onClick={onClickLogout}>
+          Logout
+        </button>
+      </div>
     </nav>
   )
 }

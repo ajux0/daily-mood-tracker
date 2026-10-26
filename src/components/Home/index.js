@@ -39,7 +39,7 @@ const Home = () => {
     <div className="page-container">
       <Header />
       <div className="home-content">
-        <h2 className="home-title">Moods in a Month</h2>
+        <h1 className="home-title">Daily Mood Tracker</h1>
         <div className="home-grid">
           <div className="card emoji-card">
             <ul className="emoji-list">
