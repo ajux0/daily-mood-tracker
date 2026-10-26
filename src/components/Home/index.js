@@ -39,7 +39,6 @@ const Home = () => {
     <div className="page-container">
       <Header />
       <div className="home-content">
-        <h1 className="home-title">Daily Mood Tracker</h1>
         <div className="home-grid">
           <div className="card emoji-card">
             <ul className="emoji-list">
@@ -143,11 +142,11 @@ const Home = () => {
                 ))}
               </select>
             </div>
-            <p
+            <h1
               className={filterCount < 10 ? 'filter-count pad' : 'filter-count'}
             >
               {filterCount}
-            </p>
+            </h1>
           </div>
         </div>
       </div>
